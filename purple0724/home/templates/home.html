@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div name="recommendation" style="padding-top:100px;">
+    </div>
+    <div name="search">
+        <p>원하는 장소를 찾아보세요</p>
+        <a href="{% url 'search' %}">장소 찾으러 가기</a>
+    </div>
+    <div name="curation">
+        오늘의 추천 장소
+    </div>
+    {% if curation_index %}
+        {% for curation in curation_index %}
+            <a href="{% url 'c_detail' curation.id %}">{{curation.title}}</a>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

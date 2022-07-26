@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding-top: 100px;">
+{{curation.title}}
+{{curation.author.username}}
+{{curation.created_at}}
+{{curation.content}}
+<img src={{curation.image.url}}>
+</div>
+{% endblock %}
